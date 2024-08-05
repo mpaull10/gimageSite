@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, Group, Text, Image } from "@mantine/core";
-import LogoWhite from "../../public/LogoWhite.svg";
+
 import { Pages } from "../../utils/pages";
 import classNames from "classnames";
 import classes from "./Header.module.css";
@@ -35,7 +35,9 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
         onClick={() => onSectionChange("Home")}
       >
         <Image
-          src={currentSection === "Home" ? "/logoWhite.svg" : "/logoOrange.svg"}
+          src={
+            currentSection === "Home" ? "../logoWhite.svg" : "../logoOrange.svg"
+          }
           h={36}
         ></Image>
       </Button>
