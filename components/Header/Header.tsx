@@ -36,7 +36,9 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
       >
         <Image
           src={
-            currentSection === "Home" ? "../LogoWhite.svg" : "../LogoOrange.svg"
+            currentSection === "Home"
+              ? "..assets/LogoWhite.svg"
+              : "..assets/LogoOrange.svg"
           }
           h={36}
         ></Image>
