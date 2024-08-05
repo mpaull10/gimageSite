@@ -13,13 +13,13 @@ import { Section } from "../Section";
 const data = [
   {
     name: "Matthew Paull",
-    img: "../../public/assets/matthew.png",
+    img: "../../public/assets/Matthew.png",
     position: "CEO",
   },
 
-  { name: "Jason Kornbluth", img: "../assets/jason.png", position: "COO" },
+  { name: "Jason Kornbluth", img: "../../assets/Jason.png", position: "COO" },
 
-  { name: "Evan Sommer", img: "../assets/evan.png", position: "CFO" },
+  { name: "Evan Sommer", img: "../assets/Evan.png", position: "CFO" },
 ];
 export function AboutUs() {
   const theme = useMantineTheme();
