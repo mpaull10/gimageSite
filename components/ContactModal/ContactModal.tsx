@@ -13,7 +13,7 @@ import {
 } from "@mantine/core";
 import classes from "./contactModal.module.css";
 import { useState } from "react";
-import { sendEmail } from "./SendEmail";
+import { sendEmail } from "./sendEmail";
 import { useForm } from "@mantine/form";
 
 export type EmailData = {
