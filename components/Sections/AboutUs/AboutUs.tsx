@@ -12,9 +12,9 @@ import { Section } from "../Section";
 const data = [
   { name: "Matthew Paull", img: "../matthew.png", position: "CEO" },
 
-  { name: "Jason Kornbluth", img: "../jason.png", position: "COO" },
+  { name: "Jason Kornbluth", img: "jason.png", position: "COO" },
 
-  { name: "Evan Sommer", img: "../evan.png", position: "CFO" },
+  { name: "Evan Sommer", img: "../../public/evan.png", position: "CFO" },
 ];
 export function AboutUs() {
   const theme = useMantineTheme();
