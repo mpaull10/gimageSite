@@ -8,13 +8,18 @@ import {
   useMantineTheme,
   BackgroundImage,
 } from "@mantine/core";
+
 import { Section } from "../Section";
 const data = [
-  { name: "Matthew Paull", img: "../matthew.png", position: "CEO" },
+  {
+    name: "Matthew Paull",
+    img: "../../public/assets/matthew.png",
+    position: "CEO",
+  },
 
-  { name: "Jason Kornbluth", img: "jason.png", position: "COO" },
+  { name: "Jason Kornbluth", img: "../assets/jason.png", position: "COO" },
 
-  { name: "Evan Sommer", img: "../../public/evan.png", position: "CFO" },
+  { name: "Evan Sommer", img: "../assets/evan.png", position: "CFO" },
 ];
 export function AboutUs() {
   const theme = useMantineTheme();
