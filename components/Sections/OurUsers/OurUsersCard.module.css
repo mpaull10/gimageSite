@@ -1,0 +1,23 @@
+.chamfer {
+  -webkit-clip-path: polygon(
+    24px 0px,
+    calc(100% - 24px) 0px,
+    100% 24px,
+    100% calc(100% - 24px),
+    calc(100% - 24px) 100%,
+    24px 100%,
+    0% calc(100% - 24px),
+    0% 24px
+  );
+  clip-path: polygon(
+    24px 0px,
+    calc(100% - 24px) 0px,
+    100% 24px,
+    100% calc(100% - 24px),
+    calc(100% - 24px) 100%,
+    24px 100%,
+    0% calc(100% - 24px),
+    0% 24px
+  );
+  /* background-color: blue; */
+}

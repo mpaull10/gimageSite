@@ -1,0 +1,12 @@
+.active > p {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.inactive > p {
+  font-weight: 600;
+}
+.button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}

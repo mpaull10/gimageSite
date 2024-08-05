@@ -1,0 +1,7 @@
+.background {
+  background: radial-gradient(
+    circle,
+    var(--mantine-color-orange-0),
+    var(--mantine-color-orange-9)
+  );
+}

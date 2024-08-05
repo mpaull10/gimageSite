@@ -1,0 +1,6 @@
+.img {
+  background-position: left;
+  background-repeat: no-repeat;
+  /* object-fit: contain; */
+  background-size: contain;
+}
