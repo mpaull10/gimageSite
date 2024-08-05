@@ -10,11 +10,11 @@ import {
 } from "@mantine/core";
 import { Section } from "../Section";
 const data = [
-  { name: "Matthew Paull", img: "matthew.png", position: "CFO" },
+  { name: "Matthew Paull", img: "/matthew.png", position: "CFO" },
 
-  { name: "Jason Kornbluth", img: "jason.png", position: "CTO" },
+  { name: "Jason Kornbluth", img: "/jason.png", position: "CTO" },
 
-  { name: "Evan Sommer", img: "evan.png", position: "CEO" },
+  { name: "Evan Sommer", img: "/evan.png", position: "CEO" },
 ];
 export function AboutUs() {
   const theme = useMantineTheme();
