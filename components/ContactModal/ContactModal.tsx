@@ -11,7 +11,7 @@ import {
   Stack,
   StackProps,
 } from "@mantine/core";
-import classes from "./contactModal.module.css";
+import classes from "./ContactModal.module.css";
 import { useState } from "react";
 import { sendEmail } from "./sendEmail";
 import { useForm } from "@mantine/form";
