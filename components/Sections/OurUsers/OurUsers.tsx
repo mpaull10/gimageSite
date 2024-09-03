@@ -31,7 +31,11 @@ export function OurUsers() {
         pb: "xl",
       }}
     >
-      <SimpleGrid cols={2} spacing="24" verticalSpacing="24">
+      <SimpleGrid
+        cols={2}
+        spacing={{ base: 12, md: 24 }}
+        verticalSpacing={{ base: 12, md: 24 }}
+      >
         {data.map((card, index) => (
           <OurUsersCard {...card} key={index} />
         ))}

@@ -1,11 +1,22 @@
-import { Stack, StackProps, Image, Title, Flex } from "@mantine/core";
+import {
+  Stack,
+  StackProps,
+  Image,
+  Title,
+  Flex,
+  useMantineTheme,
+} from "@mantine/core";
 import classes from "./OurUsersCard.module.css";
+import { useMediaQuery } from "@mantine/hooks";
 interface OurUsersProps extends StackProps {
   text: string;
   img: string;
 }
 
 export function OurUsersCard({ text, img, ...props }: OurUsersProps) {
+  const theme = useMantineTheme();
+  const maxW = useMediaQuery(`(max-width: ${theme.breakpoints.md})`);
+  const regex = new RegExp("<br/>", "g");
   return (
     <Stack
       gap={24}
@@ -16,16 +27,18 @@ export function OurUsersCard({ text, img, ...props }: OurUsersProps) {
       style={{ borderRadius: 12 }}
     >
       <Flex>
-        <Image src={img} height={96} w={"auto"}></Image>
+        <Image src={img} height={maxW ? 48 : 96} w={"auto"}></Image>
       </Flex>
       <Title
         c="white.0"
         fw="700"
-        fz={24}
+        fz={{ base: 12, md: 24 }}
         lh={1.5}
         ta="center"
         tt="uppercase"
-        dangerouslySetInnerHTML={{ __html: text }}
+        dangerouslySetInnerHTML={{
+          __html: maxW ? text.replace(regex, " ") : text,
+        }}
       ></Title>
     </Stack>
   );

@@ -1,6 +1,6 @@
 import {
   AppShell,
-  Container,
+  AppShellProps,
   Stack,
   StackProps,
   useMantineTheme,
@@ -9,17 +9,20 @@ import React from "react";
 import { useHeadroom, useMediaQuery } from "@mantine/hooks";
 import { useDisclosure } from "@mantine/hooks";
 import { Header, HeaderProps } from "./Header/Header";
+import { MobileMenu } from "./MobileMenu/MobileMenu";
 export const HEADERHEIGHT = 64;
 
-interface ShellProps extends HeaderProps {
+interface ShellProp extends AppShellProps {
   children: React.ReactNode;
+  currentSection: string;
+  onSectionChange: (section: string) => void;
 }
 
 export const Shell = ({
   children,
   currentSection,
   onSectionChange,
-}: ShellProps) => {
+}: ShellProp) => {
   const pinned = useHeadroom({ fixedAt: 128 });
   const [opened, { close, toggle }] = useDisclosure(false);
   const theme = useMantineTheme();
@@ -29,6 +32,7 @@ export const Shell = ({
     <AppShell
       header={{ height: { HEADERHEIGHT }, collapsed: !pinned, offset: false }}
       withBorder={false}
+      bg="dark.9"
     >
       <AppShell.Header
         maw={{ base: "intitial", lg: theme.breakpoints.lg }}
@@ -41,7 +45,15 @@ export const Shell = ({
         <Header
           currentSection={currentSection}
           onSectionChange={onSectionChange}
+          opened={opened}
+          onBurgerClick={toggle}
         ></Header>
+        <MobileMenu
+          opened={opened}
+          onClose={close}
+          currentSection={currentSection}
+          onSectionChange={onSectionChange}
+        ></MobileMenu>
       </AppShell.Header>
 
       <AppShell.Main>{children}</AppShell.Main>

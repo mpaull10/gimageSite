@@ -7,9 +7,11 @@ import { OurUsers } from "../components/Sections/OurUsers/OurUsers";
 import { ComingSoon } from "../components/Sections/ComingSoon/ComingSoon";
 import { AboutUs } from "../components/Sections/AboutUs/AboutUs";
 import { ContactUs } from "../components/Sections/ContactUs/ContactUs";
+import { Footer } from "../components/Footer/Footer";
+import { Pages } from "../utils/pages";
 
 export default function IndexPage() {
-  const [currentSection, setCurrentSection] = useState<string>("Home");
+  const [currentSection, setCurrentSection] = useState("home");
   const handleSectionChange = (section: string) => {
     setCurrentSection(section);
     const sectionElement = document.getElementById(section);
@@ -17,23 +19,15 @@ export default function IndexPage() {
       sectionElement.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const landingRef = useRef(null);
-  const featuresRef = useRef(null);
-  const ourUsersRef = useRef(null);
-  const comingSoonRef = useRef(null);
-  const aboutUsRef = useRef(null);
-  const contactUsRef = useRef(null);
+  const sections = Pages.map((page) => {
+    return {
+      ref: useRef(null),
+      name: page.name,
+      id: page.id,
+    };
+  });
 
   useEffect(() => {
-    const sections = [
-      { ref: landingRef, name: "Home" },
-      { ref: featuresRef, name: "Features" },
-      { ref: ourUsersRef, name: "Users" },
-      { ref: comingSoonRef, name: "R&D" },
-      { ref: aboutUsRef, name: "About" },
-      { ref: contactUsRef, name: "Contact" },
-    ];
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -43,7 +37,7 @@ export default function IndexPage() {
             );
             if (section) {
               setCurrentSection(section.name);
-              console.log(section);
+              // console.log(section);
             }
           }
         });
@@ -82,24 +76,25 @@ export default function IndexPage() {
       currentSection={currentSection}
       onSectionChange={handleSectionChange}
     >
-      <div id="Home" ref={landingRef}>
+      <div {...sections[0]}>
         <Landing onSectionChange={handleSectionChange} />
       </div>
-      <div id="Features" ref={featuresRef}>
+      <div {...sections[1]}>
         <Features />
       </div>
-      <div id="Users" ref={ourUsersRef}>
+      <div {...sections[2]}>
         <OurUsers />
       </div>
-      <div id="R&D" ref={comingSoonRef}>
+      <div {...sections[3]}>
         <ComingSoon />
       </div>
-      <div id="About" ref={aboutUsRef}>
+      <div {...sections[4]}>
         <AboutUs />
       </div>
-      <div id="Contact" ref={contactUsRef}>
+      <div {...sections[5]}>
         <ContactUs />
       </div>
+      <Footer setSection={handleSectionChange}></Footer>
     </Shell>
   );
 }

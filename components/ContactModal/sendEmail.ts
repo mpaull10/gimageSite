@@ -4,7 +4,7 @@ export type Res = {
   message: string;
 };
 export const sendEmail = async (data: EmailData) => {
-  const accessKey = "9300d39f-70be-402e-a511-27653f517f2d";
+  const accessKey = "308380e4-aa53-4dc5-9aeb-1875e60cd4bc";
   const formData = new FormData();
   formData.append("access_key", accessKey || "");
   formData.append("name", data.name);

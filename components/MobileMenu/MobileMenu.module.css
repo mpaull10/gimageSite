@@ -1,0 +1,31 @@
+.navLink {
+  font-weight: 500;
+  border-radius: var(--mantine-radius-md);
+  margin-bottom: var(--mantine-spacing-sm);
+  color: var(--mantine-color-dark-1);
+}
+.active {
+  font-weight: 900;
+  color: var(--mantine-color-dark-0);
+}
+.navLink > div {
+  display: flex;
+}
+.navLink span {
+  font-size: var(--mantine-font-size-xl);
+}
+.navLink path {
+  height: 20px;
+}
+.innerNavLink {
+}
+.header {
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+}
+.button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}

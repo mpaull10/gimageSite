@@ -1,13 +1,24 @@
-import { Stack, Title, Text, Group, Button } from "@mantine/core";
+import {
+  Stack,
+  Title,
+  Text,
+  Group,
+  Button,
+  useMantineTheme,
+} from "@mantine/core";
 import classes from "./Landing.module.css";
 import { Section } from "../Section";
 import { GimageButton } from "../../Buttons/GimageButton";
 import ChevronDown from "../../../public/chevronDown.svg";
+import { useMediaQuery } from "@mantine/hooks";
 interface LandingProps {
   onSectionChange: (section: string) => void;
 }
 
 export function Landing({ onSectionChange }: LandingProps) {
+  const theme = useMantineTheme();
+  const maxW = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+
   return (
     <Section
       className={classes.background}
@@ -33,7 +44,7 @@ export function Landing({ onSectionChange }: LandingProps) {
           <br />
           Connect.
         </Title>
-        <Title tt="uppercase" fz={{ base: 32, lg: 48 }} c="black.9">
+        <Title tt="uppercase" fz={{ base: 32, lg: 48 }} c="black.9" ta="center">
           BUILDING GYM COMMUNITIES
         </Title>
 
@@ -41,7 +52,7 @@ export function Landing({ onSectionChange }: LandingProps) {
           <Button
             variant="filled"
             bg="black.9"
-            onClick={() => onSectionChange("Contact")}
+            onClick={() => onSectionChange("contact")}
             tt="uppercase"
             fw="700"
             fz={{ base: "lg", lg: 24 }}
@@ -57,7 +68,7 @@ export function Landing({ onSectionChange }: LandingProps) {
           <Button
             variant="outline"
             color="white.0"
-            onClick={() => onSectionChange("Features")}
+            onClick={() => onSectionChange("features")}
             tt="uppercase"
             fw="700"
             fz={{ base: "lg", lg: 24 }}
@@ -80,7 +91,7 @@ export function Landing({ onSectionChange }: LandingProps) {
           mt={{ base: "md", lg: "lg" }}
         >
           A fitness focused social media app to promote an active lifestyle,
-          <br />
+          <br style={{ display: maxW ? "none" : "initial" }} />
           exchange ideas, and stay accountable.
         </Text>
       </Stack>
