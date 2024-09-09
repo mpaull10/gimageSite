@@ -1,4 +1,4 @@
-import { Group, Stack, Title, Text, Image } from "@mantine/core";
+import { Group, Stack, Title, Text } from "@mantine/core";
 import { featuresData } from "./Features";
 export function FeaturesMobile() {
   const items = featuresData.map((d, index) => {

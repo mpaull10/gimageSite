@@ -1,4 +1,3 @@
-import { Button, Group, Stack, StackProps } from "@mantine/core";
 import { useState, useRef, useEffect } from "react";
 import { Shell } from "../components/Shell";
 import { Landing } from "../components/Sections/Landing/Landing";
@@ -19,13 +18,22 @@ export default function IndexPage() {
       sectionElement.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const sections = Pages.map((page) => {
-    return {
-      ref: useRef(null),
-      name: page.name,
-      id: page.id,
-    };
-  });
+  // const sectionRefs = useRef(Pages.map(() => useRef(null)));
+  // const sections = Pages.map((page) => {
+  //   return {
+  //     ref: useRef(null),
+  //     name: page.name,
+  //     id: page.id,
+  //   };
+  // });
+  const sections = [
+    { name: "Home", id: "home", ref: useRef(null) },
+    { name: "Features", id: "features", ref: useRef(null) },
+    { name: "Users", id: "users", ref: useRef(null) },
+    { name: "R&D", id: "rd", ref: useRef(null) },
+    { name: "About", id: "about", ref: useRef(null) },
+    { name: "Contact", id: "contact", ref: useRef(null) },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(

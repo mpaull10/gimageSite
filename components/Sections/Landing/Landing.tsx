@@ -8,8 +8,6 @@ import {
 } from "@mantine/core";
 import classes from "./Landing.module.css";
 import { Section } from "../Section";
-import { GimageButton } from "../../Buttons/GimageButton";
-import ChevronDown from "../../../public/chevronDown.svg";
 import { useMediaQuery } from "@mantine/hooks";
 interface LandingProps {
   onSectionChange: (section: string) => void;

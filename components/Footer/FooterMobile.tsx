@@ -7,8 +7,6 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { Pages } from "../../utils/pages";
-import { useMediaQuery } from "@mantine/hooks";
-import { FooterMobile } from "./FooterMobile";
 interface FooterProps {
   setSection: (section: string) => void;
 }
@@ -17,18 +15,21 @@ const style = {
   padding: 0,
   margin: 0,
 };
-export function Footer({ setSection }: FooterProps) {
+export function FooterMobile({ setSection }: FooterProps) {
   const theme = useMantineTheme();
-  const maxW = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   const items = Pages.map((sec, index) => (
-    <Button key={index} onClick={() => setSection(sec.id)} style={style}>
+    <Button
+      key={index}
+      onClick={() => setSection(sec.id)}
+      style={style}
+      fz="sm"
+      my="0"
+    >
       {sec.name}
     </Button>
   ));
-  return maxW ? (
-    <FooterMobile setSection={setSection} />
-  ) : (
+  return (
     <Stack
       w={{ base: "intitial", lg: theme.breakpoints.lg }}
       left={0}
@@ -36,11 +37,13 @@ export function Footer({ setSection }: FooterProps) {
       mx="auto"
       px={{ base: 16, lg: 0 }}
     >
-      <Group wrap="nowrap" justify="space-between">
+      <Stack align="center">
         <Button style={style} onClick={() => setSection("Home")}>
           <Image src="/assets/LogoOrange.svg" h="32"></Image>
         </Button>
-        <Group>{items}</Group>
+        <Group gap="sm" justify="center">
+          {items}
+        </Group>
         <Group>
           <Button style={style}>
             <Image src="/assets/instragram.png" h="20"></Image>
@@ -49,7 +52,7 @@ export function Footer({ setSection }: FooterProps) {
             <Image src="/assets/linkedin.png" h="20"></Image>
           </Button>
         </Group>
-      </Group>
+      </Stack>
       <Group
         style={{ borderTop: "var(--mantine-color-white-2) 1px solid" }}
         py="sm"

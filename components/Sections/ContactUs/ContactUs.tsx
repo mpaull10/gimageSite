@@ -1,13 +1,3 @@
-import {
-  Stack,
-  Title,
-  Text,
-  Group,
-  Image,
-  Flex,
-  useMantineTheme,
-  BackgroundImage,
-} from "@mantine/core";
 import { Section } from "../Section";
 import { ContactModal } from "../../ContactModal/ContactModal";
 

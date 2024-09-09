@@ -6,7 +6,6 @@ import {
   Flex,
   useMantineTheme,
 } from "@mantine/core";
-import classes from "./OurUsersCard.module.css";
 import { useMediaQuery } from "@mantine/hooks";
 interface OurUsersProps extends StackProps {
   text: string;

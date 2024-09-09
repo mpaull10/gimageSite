@@ -1,12 +1,4 @@
-import {
-  Stack,
-  Title,
-  Text,
-  Group,
-  Image,
-  Flex,
-  useMantineTheme,
-} from "@mantine/core";
+import { Stack, Title, Text, Flex, useMantineTheme } from "@mantine/core";
 import classes from "./ComingSoon.module.css";
 import { Section } from "../Section";
 import { useEffect, useState } from "react";

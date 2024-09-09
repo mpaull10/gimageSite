@@ -1,7 +1,7 @@
 import { Stack, Title, Text, Group } from "@mantine/core";
 
 import { Section } from "../Section";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { FeaturesMobile } from "./FeaturesMobile";
 export const featuresData = [
   {
@@ -24,9 +24,14 @@ export const featuresData = [
   },
 ];
 export function Features() {
-  const features = featuresData.map((d) => {
-    return { ref: useRef(null), ...d };
-  });
+  const features = [
+    { ...featuresData[0], ref: useRef(null) },
+    { ...featuresData[1], ref: useRef(null) },
+    { ...featuresData[2], ref: useRef(null) },
+  ];
+  // const features = featuresData.map((d) => {
+  //   return { ref: useRef(null), ...d };
+  // });
   const [subsection, setSubsection] = useState<string>("gimage");
   const handleSectionChange = (subsection: string, e: React.MouseEvent) => {
     // e.stopPropagation(); // Stop event from propagating to the page
@@ -85,7 +90,7 @@ export function Features() {
   return (
     <Section
       bg="black.9"
-      h={{ base: "200vh", lg: "100vh" }}
+      h={{ base: "200vh", md: "100vh" }}
       title="Features"
       innerProps={{
         flex: 1,
