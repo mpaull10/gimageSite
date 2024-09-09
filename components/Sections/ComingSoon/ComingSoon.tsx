@@ -41,7 +41,7 @@ export function ComingSoon() {
         gap={"md"}
       >
         <Stack flex={1} gap={0}>
-          <Title c="white.0" lh={1.5}>
+          <Title c="white.0" lh={1.5} fz={{ lg: "h1", md: "h2", base: "h3" }}>
             Schedule Group Workouts
           </Title>
           <Text c="white.1">Train with your friends</Text>
@@ -55,8 +55,12 @@ export function ComingSoon() {
           ></Flex>{" "}
         </Stack>
         <Stack flex={1} gap={0} lh={1.5}>
-          <Title c="white.0">Track your workouts</Title>
-          <Text c="white.1">Journal your latest workout progress</Text>
+          <Title c="white.0" lh={1.5} fz={{ lg: "h1", md: "h2", base: "h3" }}>
+            Track your workouts
+          </Title>
+          <Text fz={{ lg: "md", md: "sm" }} c="white.1">
+            Journal your latest workout progress
+          </Text>
           <Flex
             mt="md"
             flex={1}

@@ -27,13 +27,15 @@ export function AboutUs() {
     <Stack key={index} gap={0}>
       <Image
         src={d.img}
-        w={148}
+        w={{ lg: 148, base: "100%" }}
         style={{ borderRadius: "12px 12px 0px 0px" }}
       ></Image>
-      <Title c="white.0" fw={700} fz={16} mt={12}>
+      <Title c="white.0" fw={700} fz={{ lg: 16, md: 14, base: 12 }} mt={12}>
         {d.name}
       </Title>
-      <Text c="white.2">{d.position} </Text>
+      <Text c="white.2" fz={{ lg: "md", sm: "sm" }}>
+        {d.position}{" "}
+      </Text>
     </Stack>
   ));
   return (
@@ -57,19 +59,19 @@ export function AboutUs() {
 
           <Group wrap="nowrap" align="top">
             <Image src="/quotes.png" h={48} mt={8}></Image>
-            <Text fw="500" c="white.1" fz={18}>
+            <Text fw="500" c="white.1" fz={{ base: 14, lg: 18 }}>
               Our mission is to connect the gym community! Share your fitness
-              journey, offer support to others, and stay accountable. Were
+              journey, offer support to others, and stay accountable. We're
               connecting everyone, of all fitness levels, to create a stronger,
               more motivated fitness family!
             </Text>
           </Group>
         </Stack>
         <Stack align="center" gap="sm">
-          <Group gap={48} mt="xl">
+          <Group gap={24} mt="xl" wrap="nowrap" maw={"600"}>
             {pics}
           </Group>
-          <Text fz={16} c="white.1">
+          <Text fz={{ base: 13, lg: 16 }} c="white.1">
             Welcome to Gimage! The Gimage team consists of three dedicated
             students at The Ohio State University. We have a passion for
             activity in all shapes and forms, from weightlifting and yoga, to

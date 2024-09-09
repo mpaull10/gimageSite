@@ -16,7 +16,7 @@ export function Section({
   const theme = useMantineTheme();
   const titleSection = title ? (
     <Title
-      fz={{ base: "48", lg: 64 }}
+      fz={{ base: "42", lg: 64 }}
       style={{ alignSelf: "flex-start" }}
       ta="start"
       c="white.0"

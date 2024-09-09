@@ -17,7 +17,7 @@ export const featuresData = [
     id: "group",
   },
   {
-    title: "Start Discussion",
+    title: "Start Discussions",
     subtitle: "Ask wellness questions to discussion boards",
     image: "/assets/discussion.png",
     id: "discussion",
