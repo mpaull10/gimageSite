@@ -59,7 +59,7 @@ export function AboutUs() {
             <Image src="/quotes.png" h={48} mt={8}></Image>
             <Text fw="500" c="white.1" fz={{ base: 14, lg: 18 }}>
               Our mission is to connect the gym community! Share your fitness
-              journey, offer support to others, and stay accountable. We're
+              journey, offer support to others, and stay accountable. We&apos;re
               connecting everyone, of all fitness levels, to create a stronger,
               more motivated fitness family!
             </Text>
