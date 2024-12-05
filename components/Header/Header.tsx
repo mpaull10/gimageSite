@@ -1,7 +1,6 @@
 "use client";
 
-import { Button, Group, Text, Image, Burger } from "@mantine/core";
-
+import { Button, Group, Text, Image } from "@mantine/core";
 import { Pages } from "../../utils/pages";
 import classNames from "classnames";
 import classes from "./Header.module.css";
@@ -9,15 +8,11 @@ import classes from "./Header.module.css";
 export interface HeaderProps {
   currentSection: string;
   onSectionChange: (section: string) => void;
-  opened: boolean;
-  onBurgerClick: () => void;
 }
 
 export function Header({
   currentSection,
   onSectionChange,
-  opened,
-  onBurgerClick,
 }: HeaderProps) {
   const items = Pages.map((page, index) => (
     <button
@@ -40,6 +35,7 @@ export function Header({
         unstyled
         className={classes.button}
         onClick={() => onSectionChange("Home")}
+        style={{ padding: "0 8px" }} // Add padding to the button
       >
         <Image
           src={
@@ -48,17 +44,12 @@ export function Header({
               : "../assets/LogoOrange.svg"
           }
           h={36}
-        ></Image>
+          style={{ display: "block", margin: "0 auto" }} // Center the image within the button
+        />
       </Button>
       <Group gap="xl" visibleFrom="sm">
         {items}
       </Group>
-      <Burger
-        opened={opened}
-        onClick={onBurgerClick}
-        size="sm"
-        hiddenFrom="sm"
-      />
     </Group>
   );
 }
