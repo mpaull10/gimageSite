@@ -48,7 +48,7 @@ export function ComingSoon() {
         </Stack>
         <Stack flex={1} gap={0} lh={1.5}>
           <Title c="white.0" lh={1.5} fz={{ lg: "h1", md: "h2", base: "h3" }}>
-            Track your workouts
+            Track Your Workouts
           </Title>
           <Text fz={{ lg: "md", md: "sm" }} c="white.1">
             Journal your latest workout progress
