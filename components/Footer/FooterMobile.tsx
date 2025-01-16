@@ -49,12 +49,16 @@ export function FooterMobile({ setSection }: FooterProps) {
           {items}
         </Group>
         <Group justify="center">
-          <Button style={style}>
-            <Image src="/assets/instragram.png" h="20" />
-          </Button>
-          <Button style={style}>
-            <Image src="/assets/linkedin.png" h="20" />
-          </Button>
+          <a href="https://www.instagram.com/gimageco?igsh=dmMwazdmNGxyNGFy" target="_blank" rel="noopener noreferrer">
+            <Button style={style}>
+              <Image src="/assets/instragram.png" h="20" />
+            </Button>
+          </a>
+          <a href="https://www.linkedin.com/company/gimageco/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
+            <Button style={style}>
+              <Image src="/assets/linkedin.png" h="20" />
+            </Button>
+          </a>
         </Group>
       </Stack>
       <Group
