@@ -50,11 +50,7 @@ export function Header({
         style={{ padding: "0 8px" }} // Add padding to the button
       >
         <Image
-          src={
-            currentSection === "Home"
-              ? "../assets/LogoWhite.svg"
-              : "../assets/LogoOrange.svg"
-          }
+          src="../assets/LogoOrange.svg" // Ensure the orange logo is used
           h={36}
           alt="Gimage Logo" // Add alt attribute
           style={{ display: "block", margin: "0 auto" }} // Center the image within the button
