@@ -56,6 +56,7 @@ export function Header({
               : "../assets/LogoOrange.svg"
           }
           h={36}
+          alt="Gimage Logo" // Add alt attribute
           style={{ display: "block", margin: "0 auto" }} // Center the image within the button
         />
       </Button>

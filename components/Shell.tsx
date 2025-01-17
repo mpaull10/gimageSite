@@ -45,11 +45,6 @@ export const Shell = ({
           currentSection={currentSection}
           onSectionChange={onSectionChange}
         ></Header>
-        <MobileMenu
-          onClose={close}
-          currentSection={currentSection}
-          onSectionChange={onSectionChange}
-        ></MobileMenu>
       </AppShell.Header>
 
       <AppShell.Main>{children}</AppShell.Main>
