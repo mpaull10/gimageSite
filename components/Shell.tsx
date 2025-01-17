@@ -24,7 +24,6 @@ export const Shell = ({
   onSectionChange,
 }: ShellProp) => {
   const pinned = useHeadroom({ fixedAt: 128 });
-  const [opened, { close, toggle }] = useDisclosure(false);
   const theme = useMantineTheme();
   const maxW = useMediaQuery(`(max-width: ${theme.breakpoints.lg})`);
 
@@ -45,11 +44,8 @@ export const Shell = ({
         <Header
           currentSection={currentSection}
           onSectionChange={onSectionChange}
-          opened={opened}
-          onBurgerClick={toggle}
         ></Header>
         <MobileMenu
-          opened={opened}
           onClose={close}
           currentSection={currentSection}
           onSectionChange={onSectionChange}
