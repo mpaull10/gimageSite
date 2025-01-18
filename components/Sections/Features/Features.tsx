@@ -29,6 +29,7 @@ export function Features() {
   const imagesContainerRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const isScrollingRef = useRef(false); // Flag to indicate if a scroll is in progress
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,29 +77,35 @@ export function Features() {
 
       isScrollingRef.current = true;
 
-      if (imagesContainerRef.current) {
-        const currentIndex = currentImageIndex;
-        let newIndex = currentIndex;
-
-        if (event.deltaY > 0) {
-          // Scrolling down
-          newIndex = Math.min(currentIndex + 1, featuresData.length - 1);
-        } else {
-          // Scrolling up
-          newIndex = Math.max(currentIndex - 1, 0);
-        }
-
-        const targetImage = imagesContainerRef.current.children[newIndex];
-        if (targetImage) {
-          targetImage.scrollIntoView({ behavior: "smooth", block: "center" });
-          setCurrentImageIndex(newIndex);
-
-          // Set a timeout to reset the isScrollingRef flag after the scroll animation is done
-          setTimeout(() => {
-            isScrollingRef.current = false;
-          }, 400); // Adjust this value to match the duration of the smooth scroll
-        }
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
       }
+
+      scrollTimeoutRef.current = setTimeout(() => {
+        if (imagesContainerRef.current) {
+          const currentIndex = currentImageIndex;
+          let newIndex = currentIndex;
+
+          if (event.deltaY > 0) {
+            // Scrolling down
+            newIndex = Math.min(currentIndex + 1, featuresData.length - 1);
+          } else {
+            // Scrolling up
+            newIndex = Math.max(currentIndex - 1, 0);
+          }
+
+          const targetImage = imagesContainerRef.current.children[newIndex];
+          if (targetImage) {
+            targetImage.scrollIntoView({ behavior: "smooth", block: "center" });
+            setCurrentImageIndex(newIndex);
+
+            // Set a timeout to reset the isScrollingRef flag after the scroll animation is done
+            setTimeout(() => {
+              isScrollingRef.current = false;
+            }, 400); // Adjust this value to match the duration of the smooth scroll
+          }
+        }
+      }, 100); // Adjust the debounce delay as needed
     };
 
     const featuresSection = featuresSectionRef.current;
