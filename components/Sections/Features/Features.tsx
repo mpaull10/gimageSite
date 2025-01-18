@@ -3,6 +3,7 @@ import { Section } from "../Section";
 import { useRef, useState, useEffect } from "react";
 import { FeaturesMobile } from "./FeaturesMobile";
 
+// Data for the features
 export const featuresData = [
   {
     title: "Post gimages",
@@ -25,62 +26,69 @@ export const featuresData = [
 ];
 
 export function Features() {
-  const featuresSectionRef = useRef<HTMLDivElement>(null);
-  const imagesContainerRef = useRef<HTMLDivElement>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isManualScroll, setIsManualScroll] = useState(false);
+  // Create refs for each feature to track their positions
+  const features = [
+    { ...featuresData[0], ref: useRef<HTMLDivElement>(null) },
+    { ...featuresData[1], ref: useRef<HTMLDivElement>(null) },
+    { ...featuresData[2], ref: useRef<HTMLDivElement>(null) },
+  ];
+  const [subsection, setSubsection] = useState<string>("gimage");
 
-  // Auto-scroll timer
+  // Use IntersectionObserver to detect when a feature is in view
   useEffect(() => {
-    const autoScrollInterval = setInterval(() => {
-      if (isManualScroll) return; // Skip auto-scrolling if manual scroll is active
-
-      if (!featuresSectionRef.current || !imagesContainerRef.current) return;
-
-      const section = featuresSectionRef.current;
-      const rect = section.getBoundingClientRect();
-
-      // Only auto-scroll if the section is in view
-      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        const nextIndex = (currentImageIndex + 1) % featuresData.length;
-        setCurrentImageIndex(nextIndex);
-
-        // Scroll to the next image
-        const imagesContainer = imagesContainerRef.current;
-        const targetImage = imagesContainer.children[nextIndex];
-        if (targetImage) {
-          targetImage.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const feature = features.find(
+              (feature) => feature.ref.current === entry.target
+            );
+            if (feature) {
+              setSubsection(feature.id); // Update the subsection state when a feature is in view
+            }
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.5, // Trigger when 50% of the feature is in view
       }
-    }, 4000);
+    );
 
-    return () => clearInterval(autoScrollInterval); // Cleanup timer
-  }, [currentImageIndex, isManualScroll]);
+    // Observe each feature
+    features.forEach((feature) => {
+      if (feature.ref.current) {
+        observer.observe(feature.ref.current);
+      }
+    });
 
-  const handleManualClick = (index: number) => {
-    setCurrentImageIndex(index); // Update current index
-    setIsManualScroll(true); // Set manual scroll flag
-    const imagesContainer = imagesContainerRef.current;
-    const targetImage = imagesContainer?.children[index];
-    if (targetImage) {
-      targetImage.scrollIntoView({ behavior: "smooth", block: "center" });
+    // Cleanup observer on component unmount
+    return () => {
+      features.forEach((feature) => {
+        if (feature.ref.current) {
+          observer.unobserve(feature.ref.current);
+        }
+      });
+    };
+  }, [features]);
+
+  const handleClick = (id: string) => {
+    const feature = features.find((feature) => feature.id === id);
+    if (feature && feature.ref.current) {
+      feature.ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      setSubsection(id);
     }
-
-    // Reset manual scroll flag after 5 seconds
-    setTimeout(() => {
-      setIsManualScroll(false);
-    }, 2000);
   };
 
-  const list = featuresData.map((feature, index) => (
+  const list = features.map((d, index) => (
     <Group
       c="white.0"
       gap={32}
       align="center"
-      opacity={index === currentImageIndex ? 1 : 0.5}
-      key={feature.id}
+      opacity={d.id === subsection ? 1 : 0.5}
+      key={index}
       style={{ cursor: "pointer" }}
-      onClick={() => handleManualClick(index)}
+      onClick={() => handleClick(d.id)}
     >
       <Title fz={160} fw={900} lh={0.8} w={144} fs="italic">
         {index + 1}
@@ -88,29 +96,28 @@ export function Features() {
       </Title>
       <Stack gap={0}>
         <Title tt="uppercase" fw={900} fz={48} lh={1.2}>
-          {feature.title}
+          {d.title}
         </Title>
         <Text fz="lg" c="white.1">
-          {feature.subtitle}
+          {d.subtitle}
         </Text>
       </Stack>
     </Group>
   ));
 
-  const images = featuresData.map((feature, index) => (
+  // Render the images for each feature
+  const images = features.map((d, index) => (
     <Stack
-      key={feature.id}
-      id={feature.id}
+      h="100%"
+      key={index}
+      id={d.id}
+      ref={d.ref}
       style={{
-        backgroundImage: `url(${feature.image})`,
+        backgroundImage: `url(${d.image})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        height: "100%",
-        flex: "0 0 100%", // Each image takes full height
-        opacity: index === currentImageIndex ? 1 : 0.5,
-        transition: "opacity 0.5s ease",
-        marginLeft: "60%", // Adjust the margin to move the images to the right
+        backgroundPosition: "right",
+        flex: "1 0 100%",
       }}
     ></Stack>
   ));
@@ -125,28 +132,18 @@ export function Features() {
         pb: "xl",
       }}
     >
-      <Stack
-        ref={featuresSectionRef}
-        h="100%"
-        style={{ overflow: "hidden", position: "relative" }}
-        visibleFrom="md"
-      >
-        <Stack pos="absolute" gap="lg">
+      {/* Container for the feature list and images */}
+      <Stack h="100%" style={{ overflow: "hidden", position: "relative" }} visibleFrom="md">
+        {/* Absolute positioned stack for the feature list */}
+        <Stack pos="absolute" gap="lg" style={{ width: "100%", pointerEvents: "none" }}>
           {list}
         </Stack>
-        <div
-          ref={imagesContainerRef}
-          style={{
-            display: "flex",
-            flexDirection: "column", // Arrange images vertically
-            overflowY: "hidden", // Disable scrolling outside container
-            width: "100%",
-            height: "100%",
-          }}
-        >
+        {/* Scrollable container for the images */}
+        <div style={{ overflowY: "scroll", height: "100%", width: "100%" }}>
           {images}
         </div>
       </Stack>
+      {/* Mobile version of the features */}
       <FeaturesMobile></FeaturesMobile>
     </Section>
   );
