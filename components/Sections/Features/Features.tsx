@@ -28,6 +28,7 @@ export function Features() {
   const featuresSectionRef = useRef<HTMLDivElement>(null);
   const imagesContainerRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const isScrollingRef = useRef(false); // Flag to indicate if a scroll is in progress
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -68,11 +69,17 @@ export function Features() {
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
       event.preventDefault(); // Prevent default scrolling behavior
-  
+
+      if (isScrollingRef.current) {
+        return; // Ignore scroll events if a scroll is already in progress
+      }
+
+      isScrollingRef.current = true;
+
       if (imagesContainerRef.current) {
         const currentIndex = currentImageIndex;
         let newIndex = currentIndex;
-  
+
         if (event.deltaY > 0) {
           // Scrolling down
           newIndex = Math.min(currentIndex + 1, featuresData.length - 1);
@@ -80,20 +87,25 @@ export function Features() {
           // Scrolling up
           newIndex = Math.max(currentIndex - 1, 0);
         }
-  
+
         const targetImage = imagesContainerRef.current.children[newIndex];
         if (targetImage) {
           targetImage.scrollIntoView({ behavior: "smooth", block: "center" });
           setCurrentImageIndex(newIndex);
+
+          // Set a timeout to reset the isScrollingRef flag after the scroll animation is done
+          setTimeout(() => {
+            isScrollingRef.current = false;
+          }, 400); // Adjust this value to match the duration of the smooth scroll
         }
       }
     };
-  
+
     const featuresSection = featuresSectionRef.current;
     if (featuresSection) {
       featuresSection.addEventListener("wheel", handleScroll);
     }
-  
+
     return () => {
       if (featuresSection) {
         featuresSection.removeEventListener("wheel", handleScroll);
@@ -113,6 +125,7 @@ export function Features() {
         const targetImage = imagesContainerRef.current?.children[index];
         if (targetImage) {
           targetImage.scrollIntoView({ behavior: "smooth", block: "center" });
+          setCurrentImageIndex(index);
         }
       }}
     >
