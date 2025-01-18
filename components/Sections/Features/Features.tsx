@@ -105,7 +105,7 @@ export function Features() {
             }, 400); // Adjust this value to match the duration of the smooth scroll
           }
         }
-      }, 100); // Adjust the debounce delay as needed
+      }, 200); // Adjust the debounce delay as needed
     };
 
     const featuresSection = featuresSectionRef.current;
