@@ -125,7 +125,7 @@ export function Features() {
   return (
     <Section
       bg="black.9"
-      h={{ base: "200vh", md: "100vh" }}
+      h={{ base: "auto", md: "100vh" }}
       title="Features"
       innerProps={{
         flex: 1,
