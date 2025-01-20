@@ -41,6 +41,7 @@ export function Header({
         width: "100%", // Ensure it spans the full width
         zIndex: 1000, // Ensure it stays on top of other content
         overflow: "hidden", // Hide scroll bars
+        height: "64px", // Ensure the header has enough height
       }}
     >
       <Button
@@ -53,7 +54,7 @@ export function Header({
           src="../assets/LogoOrange.svg" // Ensure the orange logo is used
           h={36}
           alt="Gimage Logo" // Add alt attribute
-          style={{ display: "block", margin: "0 auto" }} // Center the image within the button
+          style={{ display: "block", margin: "0 auto", maxHeight: "100%" }} // Center the image within the button and ensure it doesn't exceed the container height
         />
       </Button>
       <Group gap="xl" visibleFrom="sm">
