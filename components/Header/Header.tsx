@@ -34,31 +34,46 @@ export function Header({
       justify="space-between"
       py={{ base: "sm", md: "md" }}
       style={{
-        backgroundColor: "#000", // Add solid background color
-        position: "fixed", // Fix the header at the top
+        backgroundColor: "#000",
+        position: "fixed",
         top: 0,
         left: 0,
-        width: "100%", // Ensure it spans the full width
-        zIndex: 1000, // Ensure it stays on top of other content
-        overflow: "visible", // Ensure overflow is visible
-        height: "64px", // Ensure the header has enough height
-        padding: "0 16px", // Add padding to ensure enough space
-        boxSizing: "border-box", // Include padding in the element's total width and height
-        display: "flex", // Use flexbox to align items
+        width: "100%",
+        zIndex: 1000,
+        height: "64px",
+        padding: "0 16px",
+        boxSizing: "border-box",
+        display: "flex",
       }}
     >
-      <Box style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <Box
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100%",
+        }}
+      >
         <Button
           unstyled
           className={classes.button}
           onClick={() => onSectionChange("Home")}
-          style={{ padding: 0, display: "flex", alignItems: "center" }} // Ensure no extra padding and center the content
+          style={{
+            padding: 0,
+            display: "flex",
+            alignItems: "center",
+            height: "100%",
+          }}
         >
           <Image
-            src="../assets/LogoOrange.svg" // Ensure the orange logo is used
-            h={40} // Set the height of the logo
-            alt="Gimage Logo" // Add alt attribute
-            style={{ display: "block", maxHeight: "100%", maxWidth: "100%", overflow: "visible" }} // Ensure the image scales correctly within its container
+            src="../assets/LogoOrange.svg"
+            alt="Gimage Logo"
+            style={{
+              display: "block",
+              maxHeight: "100%",
+              maxWidth: "100%",
+              objectFit: "contain", // Ensure the logo scales correctly without being cut off
+            }}
           />
         </Button>
       </Box>
