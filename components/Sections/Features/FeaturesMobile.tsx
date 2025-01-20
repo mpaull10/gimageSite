@@ -4,7 +4,7 @@ import { featuresData } from "./Features";
 export function FeaturesMobile() {
   const items = featuresData.map((d, index) => {
     return (
-      <Stack key={index} align="center" mb="md" spacing="xs">
+      <Stack key={index} align="center" mb="md" gap="xs">
         <Stack
           w="100%"
           c="white.0"
@@ -19,7 +19,7 @@ export function FeaturesMobile() {
           <Title tt="uppercase" fw={700} fz={20} lh={1.2}>
             {d.title}
           </Title>
-          <Text fz="md" c="white.1" align="center">
+          <Text fz="md" c="white.1" ta="center">
             {d.subtitle}
           </Text>
         </Stack>

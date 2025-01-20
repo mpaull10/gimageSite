@@ -2,7 +2,11 @@ import { Button, Group, Image, Stack, Text, useMantineTheme } from "@mantine/cor
 import { Pages } from "../../utils/pages";
 import { useState } from "react";
 
-export function FooterMobile({ setSection }) {
+interface FooterMobileProps {
+  setSection: (section: string) => void;
+}
+
+export function FooterMobile({ setSection }: FooterMobileProps) {
   const theme = useMantineTheme();
   const style = {
     backgroundColor: "transparent",
