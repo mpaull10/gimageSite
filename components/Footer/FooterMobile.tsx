@@ -46,16 +46,14 @@ export function FooterMobile({ setSection }: FooterMobileProps) {
         <Group justify="center" gap="sm" mt="sm">
           <a href="https://www.instagram.com/gimageco?igsh=dmMwazdmNGxyNGFy" target="_blank" rel="noopener noreferrer">
             <Button
-              style={{ ...style, display: "flex", justifyContent: "center", alignItems: "center" }}
-              p={0}
+              style={{ ...style, display: "flex", justifyContent: "center", alignItems: "center", padding: 0 }}
             >
               <Image src="/assets/instragram.png" h="20" />
             </Button>
           </a>
           <a href="https://www.linkedin.com/company/gimageco/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
             <Button
-              style={{ ...style, display: "flex", justifyContent: "center", alignItems: "center" }}
-              p={0}
+              style={{ ...style, display: "flex", justifyContent: "center", alignItems: "center", padding: 0 }}
             >
               <Image src="/assets/linkedin.png" h="20" />
             </Button>

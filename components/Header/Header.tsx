@@ -40,7 +40,7 @@ export function Header({
         left: 0,
         width: "100%", // Ensure it spans the full width
         zIndex: 1000, // Ensure it stays on top of other content
-        overflow: "hidden", // Hide scroll bars
+        overflow: "visible", // Ensure overflow is visible
         height: "64px", // Ensure the header has enough height
         padding: "0 16px", // Add padding to ensure enough space
         boxSizing: "border-box", // Include padding in the element's total width and height
