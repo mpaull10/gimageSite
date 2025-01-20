@@ -1,6 +1,5 @@
-import { Button, Group, Image, Stack, Text, useMantineTheme } from "@mantine/core";
+import { Button, Group, Image, Stack, Text, useMantineTheme, Box } from "@mantine/core";
 import { Pages } from "../../utils/pages";
-import { useState } from "react";
 
 interface FooterMobileProps {
   setSection: (section: string) => void;
@@ -48,14 +47,18 @@ export function FooterMobile({ setSection }: FooterMobileProps) {
             <Button
               style={{ ...style, display: "flex", justifyContent: "center", alignItems: "center", padding: 0 }}
             >
-              <Image src="/assets/instragram.png" h="20" />
+              <Box style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Image src="/assets/instragram.png" h="20" />
+              </Box>
             </Button>
           </a>
           <a href="https://www.linkedin.com/company/gimageco/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
             <Button
               style={{ ...style, display: "flex", justifyContent: "center", alignItems: "center", padding: 0 }}
             >
-              <Image src="/assets/linkedin.png" h="20" />
+              <Box style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Image src="/assets/linkedin.png" h="20" />
+              </Box>
             </Button>
           </a>
         </Group>
