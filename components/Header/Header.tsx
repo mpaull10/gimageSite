@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Group, Text, Image } from "@mantine/core";
+import { Button, Group, Text, Image, Box } from "@mantine/core";
 import { Pages } from "../../utils/pages";
 import classNames from "classnames";
 import classes from "./Header.module.css";
@@ -30,9 +30,7 @@ export function Header({
   ));
 
   return (
-    <Group
-      justify="space-between"
-      py={{ base: "sm", md: "md" }}
+    <Box
       style={{
         backgroundColor: "#000", // Add solid background color
         position: "fixed", // Fix the header at the top
@@ -44,13 +42,26 @@ export function Header({
         height: "64px", // Ensure the header has enough height
         padding: "0 16px", // Add padding to ensure enough space
         boxSizing: "border-box", // Include padding in the element's total width and height
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
       }}
     >
+      <Group gap="xl" visibleFrom="sm">
+        {items}
+      </Group>
       <Button
         unstyled
         className={classes.button}
         onClick={() => onSectionChange("Home")}
-        style={{ padding: 0 }} // Ensure no extra padding
+        style={{
+          padding: 0,
+          display: "flex",
+          alignItems: "center",
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+        }} // Center the logo using absolute positioning
       >
         <Image
           src="../assets/LogoOrange.svg" // Ensure the orange logo is used
@@ -59,9 +70,6 @@ export function Header({
           style={{ display: "block", maxHeight: "100%", maxWidth: "100%" }} // Ensure the image scales correctly within its container
         />
       </Button>
-      <Group gap="xl" visibleFrom="sm">
-        {items}
-      </Group>
-    </Group>
+    </Box>
   );
 }
