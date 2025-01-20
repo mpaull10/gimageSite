@@ -56,7 +56,7 @@ export function Header({
         >
           <Image
             src="../assets/LogoOrange.svg" // Ensure the orange logo is used
-            h={36}
+            h={40} // Set the height of the logo
             alt="Gimage Logo" // Add alt attribute
             style={{ display: "block", maxHeight: "100%", maxWidth: "100%", overflow: "visible" }} // Ensure the image scales correctly within its container
           />
