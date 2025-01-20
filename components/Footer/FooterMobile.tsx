@@ -2,15 +2,13 @@ import { Button, Group, Image, Stack, Text, useMantineTheme } from "@mantine/cor
 import { Pages } from "../../utils/pages";
 import { useState } from "react";
 
-interface FooterProps {
-  setSection: (section: string) => void;
-}
-
-export function FooterMobile({ setSection }: FooterProps) {
+export function FooterMobile({ setSection }) {
   const theme = useMantineTheme();
   const style = {
     backgroundColor: "transparent",
     color: "white",
+    border: "none", // Remove border
+    outline: "none", // Remove outline
   };
 
   const items = Pages.map((sec, index) => (
@@ -43,12 +41,18 @@ export function FooterMobile({ setSection }: FooterProps) {
         </Group>
         <Group justify="center" gap="sm" mt="sm">
           <a href="https://www.instagram.com/gimageco?igsh=dmMwazdmNGxyNGFy" target="_blank" rel="noopener noreferrer">
-            <Button style={style} p={0}>
+            <Button
+              style={{ ...style, display: "flex", justifyContent: "center", alignItems: "center" }}
+              p={0}
+            >
               <Image src="/assets/instragram.png" h="20" />
             </Button>
           </a>
           <a href="https://www.linkedin.com/company/gimageco/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
-            <Button style={style} p={0}>
+            <Button
+              style={{ ...style, display: "flex", justifyContent: "center", alignItems: "center" }}
+              p={0}
+            >
               <Image src="/assets/linkedin.png" h="20" />
             </Button>
           </a>

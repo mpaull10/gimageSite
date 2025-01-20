@@ -1,47 +1,46 @@
-import { Group, Stack, Title, Text } from "@mantine/core";
+import { Stack, Title, Text } from "@mantine/core";
 import { featuresData } from "./Features";
+
 export function FeaturesMobile() {
   const items = featuresData.map((d, index) => {
     return (
-      <Group h="auto" wrap="nowrap" key={index} align="top" mb="sm">
+      <Stack key={index} align="center" mb="md" spacing="xs">
         <Stack
-          w="30%"
-          h="100%"
-          style={{
-            backgroundImage: `url(${d.image})`,
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></Stack>
-        <Stack
-          w="60%"
+          w="100%"
           c="white.0"
           gap="xs"
-          align="start"
-          key={index}
+          align="center"
           style={{ cursor: "pointer" }}
         >
-          <Stack gap="xs">
-            <Title fz={48} fw={900} lh={0.8} w={36} fs="italic">
-              {index + 1}
-              <span style={{ fontSize: 36 }}>.</span>
-            </Title>
-            <Title tt="uppercase" fw={900} fz={18} lh={1.2}>
-              {d.title}
-            </Title>
-          </Stack>
-          <Text fz="sm" c="white.1">
+          <Title fz={32} fw={900} lh={1} fs="italic">
+            {index + 1}
+            <span style={{ fontSize: 24 }}>.</span>
+          </Title>
+          <Title tt="uppercase" fw={700} fz={20} lh={1.2}>
+            {d.title}
+          </Title>
+          <Text fz="md" c="white.1" align="center">
             {d.subtitle}
           </Text>
         </Stack>
-      </Group>
+        <Stack
+          w="100%"
+          h={400} // Increase the height for the image container
+          style={{
+            backgroundImage: `url(${d.image})`,
+            backgroundSize: "contain", // Ensure the image is fully visible
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            borderRadius: "8px", // Add border radius for better aesthetics
+          }}
+        ></Stack>
+      </Stack>
     );
   });
 
   return (
-    <Stack hiddenFrom="md" h="100%" justify="flex-start" gap="sm">
+    <Stack hiddenFrom="md" h="100%" justify="flex-start" gap="md" mb="xl">
       {items}
     </Stack>
   );
 }
-

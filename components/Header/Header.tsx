@@ -42,19 +42,21 @@ export function Header({
         zIndex: 1000, // Ensure it stays on top of other content
         overflow: "hidden", // Hide scroll bars
         height: "64px", // Ensure the header has enough height
+        padding: "0 16px", // Add padding to ensure enough space
+        boxSizing: "border-box", // Include padding in the element's total width and height
       }}
     >
       <Button
         unstyled
         className={classes.button}
         onClick={() => onSectionChange("Home")}
-        style={{ padding: "0 8px" }} // Add padding to the button
+        style={{ padding: 0 }} // Ensure no extra padding
       >
         <Image
           src="../assets/LogoOrange.svg" // Ensure the orange logo is used
           h={36}
           alt="Gimage Logo" // Add alt attribute
-          style={{ display: "block", margin: "0 auto", maxHeight: "100%" }} // Center the image within the button and ensure it doesn't exceed the container height
+          style={{ display: "block", maxHeight: "100%", maxWidth: "100%" }} // Ensure the image scales correctly within its container
         />
       </Button>
       <Group gap="xl" visibleFrom="sm">

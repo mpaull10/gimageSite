@@ -39,7 +39,7 @@ export function Section({
         mt={HEADERHEIGHT}
         pt="xl"
         align={title ? "left" : "center"}
-        mb={{ base: "16", lg: "64" }}
+        mb={{ base: 64, lg: 128 }} // Increase the margin-bottom to add more space
         {...innerProps}
       >
         {titleSection}
