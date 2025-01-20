@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Group, Text, Image } from "@mantine/core";
+import { Button, Group, Text, Image, Box } from "@mantine/core";
 import { Pages } from "../../utils/pages";
 import classNames from "classnames";
 import classes from "./Header.module.css";
@@ -44,21 +44,24 @@ export function Header({
         height: "64px", // Ensure the header has enough height
         padding: "0 16px", // Add padding to ensure enough space
         boxSizing: "border-box", // Include padding in the element's total width and height
+        display: "flex", // Use flexbox to align items
       }}
     >
-      <Button
-        unstyled
-        className={classes.button}
-        onClick={() => onSectionChange("Home")}
-        style={{ padding: 0, display: "flex", alignItems: "center" }} // Ensure no extra padding and center the content
-      >
-        <Image
-          src="../assets/LogoOrange.svg" // Ensure the orange logo is used
-          h={36}
-          alt="Gimage Logo" // Add alt attribute
-          style={{ display: "block", maxHeight: "100%", maxWidth: "100%", overflow: "visible"}} // Ensure the image scales correctly within its container
-        />
-      </Button>
+      <Box style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Button
+          unstyled
+          className={classes.button}
+          onClick={() => onSectionChange("Home")}
+          style={{ padding: 0, display: "flex", alignItems: "center" }} // Ensure no extra padding and center the content
+        >
+          <Image
+            src="../assets/LogoOrange.svg" // Ensure the orange logo is used
+            h={36}
+            alt="Gimage Logo" // Add alt attribute
+            style={{ display: "block", maxHeight: "100%", maxWidth: "100%", overflow: "visible" }} // Ensure the image scales correctly within its container
+          />
+        </Button>
+      </Box>
       <Group gap="xl" visibleFrom="sm">
         {items}
       </Group>
