@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="425" height="819"><svg width="425" height="819" viewBox="0 0 425 819" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M283.937 228.106V591.02H140.974V228.106H283.937Z" fill="white"></path>
+<rect x="424.552" y="116.22" width="61.695" height="424.193" rx="12" transform="rotate(90 424.552 116.22)" fill="#FC9344"></rect>
+<rect x="369.147" y="53.3843" width="46.836" height="313.961" rx="12" transform="rotate(90 369.147 53.3843)" fill="#FC9344"></rect>
+<rect x="310.857" y="0.448242" width="36.936" height="196.803" rx="12" transform="rotate(90 310.857 0.448242)" fill="#FC9344"></rect>
+<rect width="61.695" height="424.193" rx="12" transform="matrix(-5.97022e-08 -1 -1 3.20036e-08 424.552 702.906)" fill="#FC9344"></rect>
+<rect width="46.836" height="313.961" rx="12" transform="matrix(-5.96208e-08 -1 -1 3.20473e-08 369.147 765.742)" fill="#FC9344"></rect>
+<rect width="36.936" height="196.803" rx="12" transform="matrix(-5.96208e-08 -1 -1 3.20473e-08 310.857 818.679)" fill="#FC9344"></rect>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
