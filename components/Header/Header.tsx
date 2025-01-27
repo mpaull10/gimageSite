@@ -57,7 +57,9 @@ export function Header({
         <Button
           unstyled
           className={classes.button}
-          onClick={() => onSectionChange("Home")}
+          // Scroll to top of the page when the logo is clicked
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+
           style={{
             padding: 0,
             display: "flex",
