@@ -20,6 +20,12 @@ export default function App({ Component, pageProps }: any) {
         ></link>
         {/* <link rel="stylesheet" href="../global.css" /> */}
         <link rel="shortcut icon" href="/favicon.svg"></link>
+        <link rel="shortcut icon" href="/favicon.svg"></link>
+        <meta property="og:title" content="Gimage" />
+        <meta property="og:description" content="A fitness focused social media app to promote an active lifestyle, exchange ideas, and stay accountable." />
+        <meta property="og:image" content="/assets/LogoOrange.svg" />
+        <meta property="og:url" content="https://gimageco.com" />
+        <meta property="og:type" content="website" />
       </Head>
       <Component {...pageProps} />
     </MantineProvider>
