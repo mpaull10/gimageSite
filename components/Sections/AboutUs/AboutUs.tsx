@@ -74,7 +74,7 @@ export function AboutUs() {
             students at The Ohio State University. We have a passion for
             activity in all shapes and forms, from weightlifting and yoga, to
             running and playing sports. We decided to develop this app to create
-            a tight knit, active community across all facets of healthy
+            a tight-knit, active community across all facets of healthy
             lifestyle. On our app, people can share their growth, seek advice,
             and find inspiration.
           </Text>
