@@ -1,4 +1,4 @@
-import { Group, Stack, Button, Image, Text, useMantineTheme } from "@mantine/core";
+import { Group, Stack, Button, Image, Text, useMantineTheme, Menu } from "@mantine/core";
 import { Pages } from "../../utils/pages";
 import { useMediaQuery } from "@mantine/hooks";
 import { FooterMobile } from "./FooterMobile";
@@ -58,6 +58,24 @@ export function Footer({ setSection }: FooterProps) {
             </Button>
           </a>
         </Group>
+        <Menu shadow="md" width={200}>
+          <Menu.Target>
+            <Button style={style} fz="sm">
+              Privacy & Terms
+            </Button>
+          </Menu.Target>
+          <Menu.Dropdown>
+            <Menu.Item component="a" href="/docs/privacy-policy.pdf" target="_blank">
+              Privacy Policy
+            </Menu.Item>
+            <Menu.Item component="a" href="/docs/terms-of-use.pdf" target="_blank">
+              Terms of Use
+            </Menu.Item>
+            <Menu.Item component="a" href="/docs/copyright-policy.pdf" target="_blank">
+              Copyright Policy
+            </Menu.Item>
+          </Menu.Dropdown>
+        </Menu>
       </Stack>
       <Group
         style={{ borderTop: "var(--mantine-color-white-2) 1px solid" }}
