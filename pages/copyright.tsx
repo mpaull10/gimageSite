@@ -6,7 +6,7 @@ export default function CopyrightPolicy() {
       <Title order={1} mb="md" style={{ fontWeight: 700, textAlign: "center" }}>
         GIMAGE LLC COPYRIGHT POLICY
       </Title>
-      <Text align="center" mb="lg" style={{ fontStyle: "italic" }}>
+      <Text mb="lg" style={{ fontStyle: "italic", textAlign: "center" }}>
         Version 1.0 - Last Revised on: April 13, 2025
       </Text>
       <Divider size="sm" mb="lg" />
@@ -73,7 +73,7 @@ export default function CopyrightPolicy() {
       <Text mb="md">
         Please be aware that if you knowingly materially misrepresent that material or activity on
         the Website is infringing your copyright, you may be held liable for damages (including
-        costs and attorneys' fees) under Section 512(f) of the DMCA.
+        costs and attorneys&apos; fees) under Section 512(f) of the DMCA.
       </Text>
 
       <Title order={2} mb="sm">

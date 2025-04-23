@@ -6,7 +6,7 @@ export default function TermsOfUse() {
       <Title order={1} mb="md" style={{ fontWeight: 700, textAlign: "center" }}>
         GIMAGE LLC WEB & APP TERMS OF USE
       </Title>
-      <Text align="center" mb="lg" style={{ fontStyle: "italic" }}>
+      <Text mb="lg" style={{ fontStyle: "italic", textAlign: "center" }}>
         VERSION 1.0 - LAST REVISED ON: APRIL 15, 2025
       </Text>
       <Divider size="sm" mb="lg" />

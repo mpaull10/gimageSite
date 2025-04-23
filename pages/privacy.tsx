@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
       <Title order={1} mb="md" style={{ fontWeight: 700, textAlign: "center" }}>
         GIMAGE LLC PRIVACY POLICY
       </Title>
-      <Text align="center" mb="lg" style={{ fontStyle: "italic" }}>
+      <Text mb="lg" style={{ fontStyle: "italic", textAlign: "center" }}>
         Version 1.0 - Last Revised on: April 13, 2025
       </Text>
       <Divider size="sm" mb="lg" />
@@ -15,11 +15,11 @@ export default function PrivacyPolicy() {
         I. Introduction
       </Title>
       <Text mb="md">
-        These terms of use are entered into by and between you, the user "(<strong>You</strong>"), and
-        Gimage LLC ("<strong>Company</strong>", "<strong>we</strong>", or "<strong>us</strong>"). The
-        following Privacy Policy ("<strong>Privacy Policy</strong>") governs your access to and use of
-        our services, including www.gimageco.com (the "<strong>Website</strong>") and the Gimage
-        Mobile Application (the "<strong>App</strong>") (collectively, the "<strong>Services</strong>"),
+        These terms of use are entered into by and between you, the user &quot;(<strong>You</strong>&quot;), and
+        Gimage LLC (&quot;<strong>Company</strong>&quot;, &quot;<strong>we</strong>&quot;, or &quot;<strong>us</strong>&quot;). The
+        following Privacy Policy (&quot;<strong>Privacy Policy</strong>&quot;) governs your access to and use of
+        our services, including www.gimageco.com (the &quot;<strong>Website</strong>&quot;) and the Gimage
+        Mobile Application (the &quot;<strong>App</strong>&quot;) (collectively, the &quot;<strong>Services</strong>&quot;),
         whether as a guest or a registered user. This includes:
       </Text>
       <List withPadding mb="md">
@@ -148,8 +148,8 @@ export default function PrivacyPolicy() {
         </List.Item>
         <List.Item>
           <strong>Device Information:</strong> We may collect information about your mobile device
-          and internet connection, including the device's unique device identifier, operating
-          system, browser type, mobile network information, and the device's telephone number.
+          and internet connection, including the device&apos;s unique device identifier, operating
+          system, browser type, mobile network information, and the device&apos;s telephone number.
         </List.Item>
         <List.Item>
           <strong>Stored Information and Files:</strong> The App also may access metadata and other
@@ -199,7 +199,7 @@ export default function PrivacyPolicy() {
       </List>
 
       <Text mb="md">
-        We may use the information we collect to display advertisements to our advertisers' target
+        We may use the information we collect to display advertisements to our advertisers&apos; target
         audiences. Even though we do not disclose your Personal Information for these purposes
         without your consent, if you click on or otherwise interact with an advertisement, the
         advertiser may assume that you meet its target criteria.
@@ -224,7 +224,7 @@ export default function PrivacyPolicy() {
         <List.Item>
           To a buyer or other successor or assign in the event of a merger, divestiture,
           restructuring, reorganization, dissolution, or other sale or transfer of some or all of
-          Gimage LLC's assets, whether as a going concern or as part of bankruptcy, liquidation, or
+          Gimage LLC&apos;s assets, whether as a going concern or as part of bankruptcy, liquidation, or
           similar proceeding, in which Personal Information held by Gimage LLC about our Services
           users is among the assets transferred.
         </List.Item>
@@ -237,7 +237,7 @@ export default function PrivacyPolicy() {
         </List.Item>
         <List.Item>
           To fulfill the purpose for which you provide it. For example, if you give us a phone
-          number to use the "send to a friend" feature of our App, we will transmit the contents of
+          number to use the &quot;send to a friend&quot; feature of our App, we will transmit the contents of
           that text message and your phone number to the recipients.
         </List.Item>
         <List.Item>For any other purpose disclosed by us when you provide the information.</List.Item>
@@ -278,13 +278,13 @@ export default function PrivacyPolicy() {
         </List.Item>
         <List.Item>
           <strong>Promotion by the Company:</strong> If you do not want us to use your email address
-          to promote our own or third parties' products or services, you can opt-out by sending an
+          to promote our own or third parties&apos; products or services, you can opt-out by sending an
           email to <a href="mailto:team@gimageco.com">team@gimageco.com</a>.
         </List.Item>
         <List.Item>
           <strong>Targeted Advertising by the Company:</strong> If you do not want us to use
           information that we collect or that you provide to us to deliver advertisements according
-          to our advertisers' target-audience preferences, you can opt-out by emailing{" "}
+          to our advertisers&apos; target-audience preferences, you can opt-out by emailing{" "}
           <a href="mailto:team@gimageco.com">team@gimageco.com</a>.
         </List.Item>
         <List.Item>
@@ -295,10 +295,10 @@ export default function PrivacyPolicy() {
         </List.Item>
       </List>
       <Text mb="md">
-        We do not control third parties' collection or use of your information to serve
+        We do not control third parties&apos; collection or use of your information to serve
         interest-based advertising. However, these third parties may provide you with ways to choose
         not to have your information collected or used in this way. You can opt out of receiving
-        targeted ads from members of the Network Advertising Initiative (“NAI”) on the NAI's
+        targeted ads from members of the Network Advertising Initiative (“NAI”) on the NAI&apos;s
         website.
       </Text>
       <Text mb="md">
@@ -346,7 +346,7 @@ export default function PrivacyPolicy() {
         <List.Item>Confirm whether we process their Personal Information.</List.Item>
         <List.Item>Access and delete certain Personal Information.</List.Item>
         <List.Item>
-            Correct inaccuracies in their Personal Information, taking into account the information's
+            Correct inaccuracies in their Personal Information, taking into account the information&apos;s
             nature and processing purpose (excluding Iowa and Utah).
         </List.Item>
         <List.Item>Data portability.</List.Item>
@@ -381,7 +381,7 @@ export default function PrivacyPolicy() {
         <a href="mailto:team@gimageco.com" style={{ textDecoration: "underline" }}>
             team@gimageco.com
         </a>
-        . However, please know we do not currently sell data triggering that statute's opt-out
+        . However, please know we do not currently sell data triggering that statute&apos;s opt-out
         requirements.
         </Text>
 
@@ -412,7 +412,7 @@ export default function PrivacyPolicy() {
         X. Changes to Our Privacy Policy
         </Title>
         <Text mb="md">
-        We'll notify you before we make material changes to this Policy. You’ll have the opportunity to
+        We&apos;ll notify you before we make material changes to this Policy. You&apos;ll have the opportunity to
         review the revised Policy before you choose to continue using our Services.
         </Text>
         <Text mb="md">
