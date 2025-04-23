@@ -65,13 +65,13 @@ export function Footer({ setSection }: FooterProps) {
             </Button>
           </Menu.Target>
           <Menu.Dropdown>
-            <Menu.Item component="a" href="/docs/privacy-policy.pdf" target="_blank">
+            <Menu.Item component="a" href="/privacy">
               Privacy Policy
             </Menu.Item>
-            <Menu.Item component="a" href="/docs/terms-of-use.pdf" target="_blank">
+            <Menu.Item component="a" href="/terms">
               Terms of Use
             </Menu.Item>
-            <Menu.Item component="a" href="/docs/copyright-policy.pdf" target="_blank">
+            <Menu.Item component="a" href="/copyright">
               Copyright Policy
             </Menu.Item>
           </Menu.Dropdown>

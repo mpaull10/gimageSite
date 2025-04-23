@@ -68,17 +68,17 @@ export function FooterMobile({ setSection }: FooterMobileProps) {
                Privacy & Terms
              </Button>
            </Menu.Target>
-           <Menu.Dropdown>
-             <Menu.Item component="a" href="/docs/privacy-policy.pdf" target="_blank">
-               Privacy Policy
-             </Menu.Item>
-             <Menu.Item component="a" href="/docs/terms-of-use.pdf" target="_blank">
-               Terms of Use
-             </Menu.Item>
-             <Menu.Item component="a" href="/docs/copyright-policy.pdf" target="_blank">
-               Copyright Policy
-             </Menu.Item>
-           </Menu.Dropdown>
+            <Menu.Dropdown>
+              <Menu.Item component="a" href="/privacy">
+                Privacy Policy
+              </Menu.Item>
+              <Menu.Item component="a" href="/terms">
+                Terms of Use
+              </Menu.Item>
+              <Menu.Item component="a" href="/copyright">
+                Copyright Policy
+              </Menu.Item>
+            </Menu.Dropdown>
          </Menu>
       </Stack>
       <Group
