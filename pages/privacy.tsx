@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
         I. Introduction
       </Title>
       <Text mb="md">
-        These terms of use are entered into by and between you, the user &quot;(<strong>You</strong>&quot;), and
+        These terms of use are entered into by and between you, the user (&quot;<strong>You</strong>&quot;), and
         Gimage LLC (&quot;<strong>Company</strong>&quot;, &quot;<strong>we</strong>&quot;, or &quot;<strong>us</strong>&quot;). The
         following Privacy Policy (&quot;<strong>Privacy Policy</strong>&quot;) governs your access to and use of
         our services, including www.gimageco.com (the &quot;<strong>Website</strong>&quot;) and the Gimage

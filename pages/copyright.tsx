@@ -17,8 +17,7 @@ export default function CopyrightPolicy() {
       <Text mb="md">
         We take claims of copyright infringement seriously. We will respond to notices of alleged
         copyright infringement that comply with applicable law. If you believe any materials
-        accessible on or through our services (<strong>“Services”</strong>), including www.gimageco.com (the
-          <strong>“Website”</strong>) and the Gimage Mobile Application (the <strong>“App”</strong>), infringe your copyright, you may
+        accessible on or through our services (<strong>“Services”</strong>), including www.gimageco.com (the <strong>“Website”</strong>) and the Gimage Mobile Application (the <strong>“App”</strong>), infringe your copyright, you may
         request removal of those materials (or access to them) from the Website by submitting
         written notification to our copyright agent (designated below).
       </Text>

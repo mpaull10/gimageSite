@@ -15,8 +15,7 @@ export default function TermsOfUse() {
         1. Acceptance of the Terms of Use
       </Title>
       <Text mb="md">
-        These terms of use are entered into by and between You and Gimage LLC (<strong>“Company”</strong>, <strong>“we”</strong>, or
-        <strong>“us”</strong>). The following terms and conditions (<strong>“Terms of Use”</strong>) govern your access to and use of
+        These terms of use are entered into by and between You and Gimage LLC (<strong>“Company”</strong>, <strong>“we”</strong>, or <strong>“us”</strong>). The following terms and conditions (<strong>“Terms of Use”</strong>) govern your access to and use of
         our services (<strong>“Services”</strong>), including www.gimageco.com (the “Website”) and the Gimage Mobile
         Application (the <strong>“App”</strong>), whether as a guest or a registered user.
       </Text>
